@@ -1,0 +1,33 @@
+# © 2025, Stefan Webb. Some Rights Reserved.
+#
+# Except where otherwise noted, this work is licensed under a
+# Creative Commons Attribution-ShareAlike 4.0 International
+# https://creativecommons.org/licenses/by-sa/4.0/deed.en
+
+[build-system]
+requires = ["hatchling", "vedo"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hnsw-illustrated"
+version = "0.0.1"
+authors = [{ name = "Stefan Webb", email = "info@stefanwebb.me" }]
+description = "Fully open-source and state-of-the-art Voice Activity Detection models for research and commercial use."
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "CC-BY-SA-4.0"
+license-files = ["LICEN[CS]E*"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/open_vad"]
+
+[project.urls]
+Homepage = "https://github.com/stefanwebb/open-voice-activity-detection"
+Issues = "https://github.com/stefanwebb/open-voice-activity-detection/issues"
