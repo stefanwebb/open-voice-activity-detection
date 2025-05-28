@@ -28,6 +28,11 @@ In the near future, I plan to add the following:
 
 🔌 Example integrations with Python, client-side web applications, and Unity
 
-## License
+## Instructions
+Install the package in editable mode:
+```bash
+pip install --editable .
+```
 
+## License
 This project is released under the [Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.en), encouraging both academic research *and* commercial application.
