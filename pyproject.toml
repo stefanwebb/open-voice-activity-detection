@@ -10,7 +10,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "open-voice-activity-detection"
-version = "0.0.1"
+version = "0.0.2"
 authors = [{ name = "Stefan Webb", email = "info@stefanwebb.me" }]
 description = "Fully open-source and state-of-the-art Voice Activity Detection (VAD) models for academic research and commercial applications."
 readme = "README.md"
