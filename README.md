@@ -14,10 +14,12 @@ This repository aims to change that by providing a fully open and research-frien
 
 ## Status
 As of May 27, 2025, this repository includes:
+
 ✅ A complete implementation of the Silero VAD model for research use
 
 ## Roadmap
 In the near future, I plan to add the following:
+
 🧠 Code to train Silero VAD from scratch on custom datasets
 
 📊 Evaluation scripts for standard VAD benchmarks
