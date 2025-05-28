@@ -9,10 +9,10 @@ requires = ["hatchling", "vedo"]
 build-backend = "hatchling.build"
 
 [project]
-name = "hnsw-illustrated"
+name = "open-voice-activity-detection"
 version = "0.0.1"
 authors = [{ name = "Stefan Webb", email = "info@stefanwebb.me" }]
-description = "Fully open-source and state-of-the-art Voice Activity Detection models for research and commercial use."
+description = "Fully open-source and state-of-the-art Voice Activity Detection (VAD) models for academic research and commercial applications."
 readme = "README.md"
 requires-python = ">=3.11"
 classifiers = [

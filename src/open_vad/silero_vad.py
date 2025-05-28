@@ -9,13 +9,19 @@ https://creativecommons.org/licenses/by-sa/4.0/deed.en
 import torch
 import torch.nn as nn
 
-from open_vad.encoder_block import Decoder, Encoder, STFT
+from open_vad.decoder import Decoder
+from open_vad.encoder_block import  EncoderBlock
+from open_vad.stft import STFT
 
 class SileroVAD(nn.Module):
     def __init__(self):
         super(SileroVAD, self).__init__()
         self.stft = STFT()
-        self.encoder = Encoder()
+        self.encoder = nn.Sequential(EncoderBlock(in_channels=129, out_channels=128, kernel_size=3, stride=1, padding=1),
+                                     EncoderBlock(in_channels=128, out_channels=64, kernel_size=3, stride=2, padding=1),
+                                     EncoderBlock(in_channels=64, out_channels=64, kernel_size=3, stride=2, padding=1),
+                                     EncoderBlock(in_channels=64, out_channels=128, kernel_size=3, stride=1, padding=1))
+
         self.decoder = Decoder()
 
     def reset_states(self, batch_size=1):

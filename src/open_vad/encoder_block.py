@@ -9,7 +9,7 @@ https://creativecommons.org/licenses/by-sa/4.0/deed.en
 import torch
 import torch.nn as nn
 
-class EncoderBlock(nn.module):
+class EncoderBlock(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size=3, stride=1, padding=1):
         super(EncoderBlock, self).__init__()
 
