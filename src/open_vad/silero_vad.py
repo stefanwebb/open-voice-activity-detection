@@ -25,7 +25,7 @@ class SileroVAD(nn.Module):
         self._last_batch_size = 0
 
     def forward(self, data, sr):
-
+        # Set number of samples equivalent to 32ms
         num_samples = 512 if sr == 16000 else 256
 
         if data.shape[-1] != num_samples:
@@ -47,11 +47,14 @@ class SileroVAD(nn.Module):
 
         x = torch.cat([self._context, data], dim=1)
 
+        # Short-time Fourier transform on raw audio as input features
         x = self.stft(x)
+
+        # Information bottle-neck
         x = self.encoder(x)
         x, self._state = self.decoder(x, self._state)
 
-
+        # Save remainder of state
         self._context = data[..., -context_size:]
         self._last_sr = sr
         self._last_batch_size = batch_size
